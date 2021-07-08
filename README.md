@@ -78,6 +78,7 @@ It also provides memory history which is useful for environments that don't have
 </ul>
  <br>
 [↥ back to top](#q-0)
+
 ### <span id="q-9">9. In which scenarios error boundaries do not catch errors?</span>
 
 <ul>
