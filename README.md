@@ -89,6 +89,7 @@ It also provides memory history which is useful for environments that don't have
 </ul>
  <br>
 [↥ back to top](#q-0)
+
 ### <span id="q-10">10. What is the difference between useCallBack and useMemo?</span>
 
 `useCallback` returns its function uncalled so you can call it later, while `useMemo` calls its function and returns the result.
