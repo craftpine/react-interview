@@ -20,6 +20,10 @@
 | 16  | [[JS] - How to track javascript error from client side?](#q-16)                                  |
 | 17  | [[JS] - What are the difference between `call`, `bind`, `apply`?](#q-17)                         |
 | 18  | [[JS] - What is the `arguments javascript`?](#q-18)                                              |
+| 19  | [ [JS] - What is the `Array-like`?](#q-19)                                                       |
+| 20  | [When to choose useReducer over useState?](#q-20)                                                |
+| 21  | [How to increase performance of react app?](#q-21)                                               |
+| 22  | [[JS] - What are the difference between `Event delegation` and `Event bubbling`](#q-22)          |
 
 ### <span id="q-1">1. What are forward refs?</span>
 
@@ -76,7 +80,7 @@ It also provides memory history which is useful for environments that don't have
     <li>put() function creates an effect, which instructs middleware to dispatch an action to the store.
     </li>
 </ul>
- <br>
+
 [↥ back to top](#q-0)
 
 ### <span id="q-9">9. In which scenarios error boundaries do not catch errors?</span>
@@ -87,13 +91,13 @@ It also provides memory history which is useful for environments that don't have
       <li>During Server side rendering</li>
        <li>When errors thrown in the error boundary code itself</li>
 </ul>
- <br>
+
 [↥ back to top](#q-0)
 
 ### <span id="q-10">10. What is the difference between useCallBack and useMemo?</span>
 
 `useCallback` returns its function uncalled so you can call it later, while `useMemo` calls its function and returns the result.
-<br>
+
 [↥ back to top](#q-0)
 
 ### <span id="q-11">11. What are the differences between undeclared and undefined variables? <span>
@@ -103,7 +107,6 @@ It also provides memory history which is useful for environments that don't have
 | These variables do not exist in a program and are not declared                              | These variables declared in the program but have not assigned any value                |
 | If you try to read the value of an undeclared variable, then a runtime error is encountered | If you try to read the value of an undefined variable, an undefined value is returned. |
 
- <br>
 [↥ back to top](#q-0)
 
 ### <span id="q-12">12. [JS] - How do you test for an empty object? </span>
@@ -113,7 +116,7 @@ Object.keys(obj).length === 0 && obj.constructor === Object
 ```
 
 Since date object length is 0, you need to check constructor check as well
-<br>
+
 [↥ back to top](#q-0)
 
 ### <span id="q-13">13. [JS] - How do you compare two date objects? </span>
@@ -157,8 +160,39 @@ You need to use date.getTime() method to compare date values **instead of** comp
     <br>
     [↥ back to top](#q-0)
 
-### <span id="q-18">18. [JS] - What is the `arguments javascript? </span>
+### <span id="q-18">18. [JS] - What is the arguments javascript? </span>
 
-You can use arguments instead of parameterized functions. the arguments are like an array but not really an array
+`Arguments` is an `Array-like` object You can use arguments instead of parameterized functions. the arguments are like an array but not really an array
 <br>
+[↥ back to top](#q-0)
+
+### <span id="q-19">19. [JS] - What is the `Array-like`? </span>
+
+`Array-like` means that arguments has a `length` property and properties `indexed` from zero, but it doesn't have Array's built-in methods like `forEach()` or `map()`, ....
+<br>
+[↥ back to top](#q-0)
+
+### <span id="q-20">20. When to choose useReducer over useState? </span>
+
+-   If there are many states dependent on each other.
+-   If the state is a complex object.
+
+[↥ back to top](#q-0)
+
+### <span id="q-21">21. How to increase performance of react app?</span>
+
+-   **Use Dynamic Imports/ Code-Splitting**: Lets your application download only the chunk required to run the current page, and later request back to the server for chunks required on page transition.
+-   **Don't add Unnecessary Div's**: use React.Fragment instead
+-   **Avoid using Index as key to Map Function**
+-   **Avoid Inline Function Definition in the Render Function**: because the inline function will always fail the prop diff when React does a diff check.`({} !== {} // true)`
+-   **Use React.Suspense and React.Lazy for Lazy Loading Components**
+    <br>
+    [↥ back to top](#q-0)
+
+### <span id="q-22">22. [JS] - What are the difference between `Event delegation` and `Event bubbling`? </span>
+
+| Event delegation                                                                                                                                                                                                            | Event bubbling                                                                                                                                |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Event delegation allows us to attach a single event listener, to a **parent element** , that will fire for all **descendants** matching a selector, whether those descendants exist **now** or are added in the **future**. | Event Bubbling is how events are **propagated** from the **child** DOM to the _parent_ DOM. Using `stopPropagation` to prevent this happening |
+
 [↥ back to top](#q-0)
