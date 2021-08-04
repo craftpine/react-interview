@@ -24,6 +24,10 @@
 | 20  | [When to choose useReducer over useState?](#q-20)                                                |
 | 21  | [How to increase performance of react app?](#q-21)                                               |
 | 22  | [[JS] - What are the difference between `Event delegation` and `Event bubbling`](#q-22)          |
+| 23  | [How to use innerHTML in React?](#q-23)                                                          |
+| 24  | [Is it possible to use react without JSX?](#q-24)                                                |
+| 25  | [How to prevent a function from being called multiple times, onClick, onScroll?](#q-25)          |
+| 26  | [How to prevent unnecessary updates using setState?](#q-26)                                      |
 
 ### <span id="q-1">1. What are forward refs?</span>
 
@@ -127,15 +131,15 @@ You need to use date.getTime() method to compare date values **instead of** comp
 
 ### <span id="q-14">14. [JS] - What are the difference between ( for… in ), ( for… of ) and forEach statements? </span>
 
--   `for in` allows you to access the index of the array rather than the actual element, so you need to use `array[i]` to get the value
--   `for of` allows you to access the value of the array
--   `forEach` allows you to access the both of value and index
--   `for in` allows you to access the element with the key is not a number
--   `for in` and `forEach` ignore empty elements, `for of` is not:
--   The scope of this inside `for in`, and `for of` is the scope outside of these iterative constructs, `forEach` is not, unless you use arrow function
--   Can not use the `await` and `yield` inside the `forEach` statement
-    <br>
-    [↥ back to top](#q-0)
+- `for in` allows you to access the index of the array rather than the actual element, so you need to use `array[i]` to get the value
+- `for of` allows you to access the value of the array
+- `forEach` allows you to access the both of value and index
+- `for in` allows you to access the element with the key is not a number
+- `for in` and `forEach` ignore empty elements, `for of` is not:
+- The scope of this inside `for in`, and `for of` is the scope outside of these iterative constructs, `forEach` is not, unless you use arrow function
+- Can not use the `await` and `yield` inside the `forEach` statement
+  <br>
+  [↥ back to top](#q-0)
 
 ### <span id="q-15">15. [JS] - How to track javascript error from client side? </span>
 
@@ -145,20 +149,20 @@ You need to use date.getTime() method to compare date values **instead of** comp
 
 ### <span id="q-16">16. [JS] - How to differentiate between deep and shallow copies? How to deep copy javascript object ?</span>
 
--   A deep copy: all of the values of the new variable are copied and **disconnected** from the original variable
--   A shallow copy: that certain (sub-)values are still **connected** to the original variable
--   Deep copy method: `JSON.parse()`, `lodash`, `recursion`
-    <br>
-    [↥ back to top](#q-0)
+- A deep copy: all of the values of the new variable are copied and **disconnected** from the original variable
+- A shallow copy: that certain (sub-)values are still **connected** to the original variable
+- Deep copy method: `JSON.parse()`, `lodash`, `recursion`
+  <br>
+  [↥ back to top](#q-0)
 
 ### <span id="q-17">17. [JS] - What are the difference between `call`, `bind`, `apply`? </span>
 
--   `call`, `apply` and `bind` are used to invoke functions and the first parameter will be used as the value of this within the function
--   `call` takes in comma-separated arguments as the next arguments
--   `apply` takes in an array of arguments as the next argument
--   `bind` return a new function
-    <br>
-    [↥ back to top](#q-0)
+- `call`, `apply` and `bind` are used to invoke functions and the first parameter will be used as the value of this within the function
+- `call` takes in comma-separated arguments as the next arguments
+- `apply` takes in an array of arguments as the next argument
+- `bind` return a new function
+  <br>
+  [↥ back to top](#q-0)
 
 ### <span id="q-18">18. [JS] - What is the arguments javascript? </span>
 
@@ -174,25 +178,53 @@ You need to use date.getTime() method to compare date values **instead of** comp
 
 ### <span id="q-20">20. When to choose useReducer over useState? </span>
 
--   If there are many states dependent on each other.
--   If the state is a complex object.
+- If there are many states dependent on each other.
+- If the state is a complex object.
 
 [↥ back to top](#q-0)
 
 ### <span id="q-21">21. How to increase performance of react app?</span>
 
--   **Use Dynamic Imports/ Code-Splitting**: Lets your application download only the chunk required to run the current page, and later request back to the server for chunks required on page transition.
--   **Don't add Unnecessary Div's**: use React.Fragment instead
--   **Avoid using Index as key to Map Function**
--   **Avoid Inline Function Definition in the Render Function**: because the inline function will always fail the prop diff when React does a diff check.`({} !== {} // true)`
--   **Use React.Suspense and React.Lazy for Lazy Loading Components**
-    <br>
-    [↥ back to top](#q-0)
+- **Use Dynamic Imports/ Code-Splitting**: Lets your application download only the chunk required to run the current page, and later request back to the server for chunks required on page transition.
+- **Don't add Unnecessary Div's**: use React.Fragment instead
+- **Avoid using Index as key to Map Function**
+- **Avoid Inline Function Definition in the Render Function**: because the inline function will always fail the prop diff when React does a diff check.`({} !== {} // true)`
+- **Use React.Suspense and React.Lazy for Lazy Loading Components**
+  <br>
+  [↥ back to top](#q-0)
 
 ### <span id="q-22">22. [JS] - What are the difference between `Event delegation` and `Event bubbling`? </span>
 
 | Event delegation                                                                                                                                                                                                            | Event bubbling                                                                                                                                |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | Event delegation allows us to attach a single event listener, to a **parent element** , that will fire for all **descendants** matching a selector, whether those descendants exist **now** or are added in the **future**. | Event Bubbling is how events are **propagated** from the **child** DOM to the _parent_ DOM. Using `stopPropagation` to prevent this happening |
+
+[↥ back to top](#q-0)
+
+### <span id="q-23">23. How to use innerHTML in React? </span>
+
+The **dangerouslySetInnerHTML** attribute is React's replacement for using **innerHTML** in the browser DOM
+Note: **cross-site scripting (XSS)** attacks
+
+`dangerouslySetInnerHTML={ __html: 'First &middot; Second' }`
+
+[↥ back to top](#q-0)
+
+### <span id="q-24">24. Is it possible to use react without JSX? </span>
+
+`` React.createElement('div', null, `Hello ${message}`) ``
+
+[↥ back to top](#q-0)
+
+### <span id="q-25">25.How to prevent a function from being called multiple times, onClick, onScroll? </span>
+
+- **Throttling**: Changes based on a time based frequency.
+- **Debouncing**: Publish changes after a period of inactivity.
+
+[↥ back to top](#q-0)
+
+### <span id="q-26">26.How to prevent unnecessary updates using setState? </span>
+
+If the values are same then you need to return **null** to stop re-rendering otherwise return the **latest** state value.
 
 [↥ back to top](#q-0)
